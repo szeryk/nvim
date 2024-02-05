@@ -1,6 +1,6 @@
 -- custom vim editor options
 require("vim-options")
-vimKeymap = require("vim-keymap")
+local vimKeymap = require("vim-keymap")
 vimKeymap.setGeneralKeymap()
 
 -- install lazy
