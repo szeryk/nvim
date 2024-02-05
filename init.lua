@@ -1,5 +1,7 @@
 -- custom vim editor options
 require("vim-options")
+vimKeymap = require("vim-keymap")
+vimKeymap.setGeneralKeymap()
 
 -- install lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
