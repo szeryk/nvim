@@ -22,10 +22,20 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
+            -- capabilities are part of completions configuration - 
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
             local lspconfig = require("lspconfig")
             -- here setup all of the lsp you want to attach to
-            lspconfig.lua_ls.setup({})
-            lspconfig.pyright.setup({})
+            lspconfig.lua_ls.setup({
+                capabilities = capabilities
+            })
+
+            -- if pyright is not attached - check your npm and node version and:
+            -- :checkhealth mason
+            lspconfig.pyright.setup({
+                capabilities = capabilities
+            })
 
             local vimKeymap = require("..vim-keymap")
             vimKeymap.setLspKeymap()
