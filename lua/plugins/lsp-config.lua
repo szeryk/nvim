@@ -13,7 +13,7 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 -- watchout! pyright needs npm to be available in the system
-                ensure_installed = { "lua_ls", "pyright" }
+                ensure_installed = { "lua_ls", "pyright", "clangd" }
             })
         end
     },
@@ -34,6 +34,10 @@ return {
             -- if pyright is not attached - check your npm and node version and:
             -- :checkhealth mason
             lspconfig.pyright.setup({
+                capabilities = capabilities
+            })
+
+            lspconfig.clangd.setup({
                 capabilities = capabilities
             })
 
