@@ -1,6 +1,26 @@
+-- tabs
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set smartindent")
+
+-- line number
+vim.opt.nu = true
+
+-- no backups
+vim.opt.swapfile = false
+
+-- better search highlighting
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+-- good colors
+vim.opt.termguicolors = true
+
+-- see more lines ahead
+vim.opt.scrolloff = 8
+
+-- column at the right
+vim.opt.colorcolumn = "120"
 
