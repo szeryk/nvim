@@ -24,6 +24,7 @@ My neovim configuration that I use to develop Python and C/C++ projects.
     - color theme:       https://github.com/catppuccin/catppuccin
     - status line:       https://github.com/nvim-lualine/lualine.nvim
     - code highlighting: https://github.com/nvim-treesitter/nvim-treesitter
+    - tmux navigation:   https://github.com/christoomey/vim-tmux-navigator
 - Utilities:
     - plugin manager:         https://github.com/folke/lazy.nvim
     - tree-like file browser: https://github.com/nvim-neo-tree/neo-tree.nvim
