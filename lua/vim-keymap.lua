@@ -16,6 +16,7 @@ function K.setGeneralKeymap()
     vim.keymap.set("n", "N", "Nzzzv")
 
     -- yank into system clipboard with leader y
+    -- when working with wsl - requires win32yank to be installed on host
     vim.keymap.set("n", "<leader>y", "\"+y")
     vim.keymap.set("v", "<leader>y", "\"+y")
     vim.keymap.set("n", "<leader>Y", "\"+Y")
