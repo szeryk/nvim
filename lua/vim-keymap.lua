@@ -24,6 +24,11 @@ function K.setGeneralKeymap()
     -- substitute word under cursor in whole file - BONKERS!
     vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+    -- tabs managments
+    vim.keymap.set("n", "<leader>tn", ":tabn<CR>")
+    vim.keymap.set("n", "<leader>tp", ":tabp<CR>")
+    vim.keymap.set("n", "<leader>tx", ":tab close<CR>")
+
 end
 
 function K.setNeotreeKeymap()
