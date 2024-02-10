@@ -4,8 +4,8 @@ My neovim configuration that I use to develop Python and C/C++ projects.
 # How to use?
 1. Clone this repo into your `$HOME/.config` dir.
 2. Make sure you have installed all dependencies.
-3. Using :Mason to install all formatters/linters listed in `lua/plugins/none-ls.lua`
-4. See and adjust `lua/vim-keymap.lua` and `lua/vim-options.lua`.
+3. Use :Mason to install all formatters/linters listed in `lua/plugins/none-ls.lua`
+4. Check and adjust `lua/vim-keymap.lua` and `lua/vim-options.lua` if needed.
 5. Enjoy :)
 
 # List of dependencies:
@@ -18,6 +18,10 @@ My neovim configuration that I use to develop Python and C/C++ projects.
 
 # Quirks
 - C++ LSP used is `clangd` which relies heavily on `compile_commands.json`. Learn about it.
+
+# Tips
+- if you want to replace vim with nvim add this to your .bashrc:
+    `alias vim=nvim`
 
 # List of plugins
 - Appearance:
