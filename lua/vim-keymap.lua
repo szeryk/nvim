@@ -32,7 +32,7 @@ function K.setGeneralKeymap()
 end
 
 function K.setNeotreeKeymap()
-	vim.keymap.set("n", "<leader>tt", ":Neotree filesystem reveal left<CR>")
+	vim.keymap.set("n", "<leader>tt", ":Neotree toggle<CR>")
 end
 
 function K.setTelescopeKeymap()
