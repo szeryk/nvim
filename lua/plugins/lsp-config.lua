@@ -2,15 +2,13 @@ return {
     -- mason manages installed LSPs, formatters, linters etc.
     {
         "williamboman/mason.nvim",
-        config = function()
-            require("mason").setup()
-        end
     },
 
     -- mason-lspconfig makes configuring mason easier
     {
         "williamboman/mason-lspconfig.nvim",
         config = function()
+            require("mason").setup()
             require("mason-lspconfig").setup({
                 -- watchout! pyright needs npm to be available in the system
                 ensure_installed = { "lua_ls", "pyright", "clangd" }
