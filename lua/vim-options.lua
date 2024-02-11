@@ -8,6 +8,9 @@ vim.cmd("set smartindent")
 -- line number
 vim.opt.nu = true
 
+-- no wrapping
+vim.opt.wrap = false
+
 -- no backups
 vim.opt.swapfile = false
 
