@@ -29,6 +29,9 @@ function K.setGeneralKeymap()
     vim.keymap.set("n", "<leader>tp", ":tabp<CR>")
     vim.keymap.set("n", "<leader>tx", ":tab close<CR>")
 
+    -- super fast macro
+    vim.keymap.set("n", "<leader><Space>", "@q")
+
 end
 
 function K.setNeotreeKeymap()
