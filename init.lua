@@ -27,6 +27,10 @@ require("neo-tree").setup({
 	filesystem = {
 		follow_current_file = { enabled = true },
 		hijack_netrw_behavior = "disabled",
+        filtered_items = {
+            hide_gitignored = false,
+            hide_dotfiles = false
+        },
 	},
 	close_if_last_window = true,
 })
