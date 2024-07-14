@@ -44,4 +44,5 @@ My neovim configuration that I use to develop Python and C/C++ projects.
     - snippet enigne:                          https://github.com/L3MON4D3/LuaSnip
     - LuaSnip completion source for nvim-cmp:  https://github.com/saadparwaiz1/cmp_luasnip
     - collection of snippets:                  https://github.com/rafamadriz/friendly-snippets
+    - copilot:                                 https://github.com/github/copilot.vim
 
