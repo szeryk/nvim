@@ -29,6 +29,46 @@ function K.setGeneralKeymap()
         { desc = "[R]eplace [W]ord, globally}" }
     )
 
+    -- enclose word under cursor in parentheses
+    vim.keymap.set(
+        "n",
+        "<leader>ew(",
+        "ciw()<Esc>P",
+        { desc = "[E]nclose [W]ord with parentheses ()" }
+    )
+
+    -- enclose word under cursor in brackets
+    vim.keymap.set(
+        "n",
+        "<leader>ew[",
+        "ciw[]<Esc>P",
+        { desc = "[E]nclose [W]ord with brackets []" }
+    )
+
+    -- enclose word under cursor in braces
+    vim.keymap.set(
+        "n",
+        "<leader>ew{",
+        "ciw{}<Esc>P",
+        { desc = "[E]nclose [W]ord with braces {}" }
+    )
+
+    -- enclose word under cursor in double quotes
+    vim.keymap.set(
+        "n",
+        '<leader>ew"',
+        'ciw""<Esc>P',
+        { desc = '[E]nclose [W]ord with double quotes ""' }
+    )
+
+    -- enclose word under cursor in single quotes
+    vim.keymap.set(
+        "n",
+        "<leader>ew'",
+        "ciw''<Esc>P",
+        { desc = "[E]nclose [W]ord with single quotes ''" }
+    )
+
     -- tabs managments
     vim.keymap.set("n", "<leader>tn", ":tabn<CR>", { desc = "[T]ab [N]ext}" })
     vim.keymap.set("n", "<leader>tp", ":tabp<CR>", { desc = "[T]ab [P]revious}" })
