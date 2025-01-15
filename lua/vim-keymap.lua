@@ -30,44 +30,19 @@ function K.setGeneralKeymap()
     )
 
     -- enclose word under cursor in parentheses
-    vim.keymap.set(
-        "n",
-        "<leader>ew(",
-        "ciw()<Esc>P",
-        { desc = "[E]nclose [W]ord with parentheses ()" }
-    )
+    vim.keymap.set("n", "<leader>ew(", "ciw()<Esc>P", { desc = "[E]nclose [W]ord with parentheses ()" })
 
     -- enclose word under cursor in brackets
-    vim.keymap.set(
-        "n",
-        "<leader>ew[",
-        "ciw[]<Esc>P",
-        { desc = "[E]nclose [W]ord with brackets []" }
-    )
+    vim.keymap.set("n", "<leader>ew[", "ciw[]<Esc>P", { desc = "[E]nclose [W]ord with brackets []" })
 
     -- enclose word under cursor in braces
-    vim.keymap.set(
-        "n",
-        "<leader>ew{",
-        "ciw{}<Esc>P",
-        { desc = "[E]nclose [W]ord with braces {}" }
-    )
+    vim.keymap.set("n", "<leader>ew{", "ciw{}<Esc>P", { desc = "[E]nclose [W]ord with braces {}" })
 
     -- enclose word under cursor in double quotes
-    vim.keymap.set(
-        "n",
-        '<leader>ew"',
-        'ciw""<Esc>P',
-        { desc = '[E]nclose [W]ord with double quotes ""' }
-    )
+    vim.keymap.set("n", '<leader>ew"', 'ciw""<Esc>P', { desc = '[E]nclose [W]ord with double quotes ""' })
 
     -- enclose word under cursor in single quotes
-    vim.keymap.set(
-        "n",
-        "<leader>ew'",
-        "ciw''<Esc>P",
-        { desc = "[E]nclose [W]ord with single quotes ''" }
-    )
+    vim.keymap.set("n", "<leader>ew'", "ciw''<Esc>P", { desc = "[E]nclose [W]ord with single quotes ''" })
 
     -- tabs managments
     vim.keymap.set("n", "<leader>tn", ":tabn<CR>", { desc = "[T]ab [N]ext}" })
@@ -127,5 +102,21 @@ function K.setLspKeymap()
         end,
     })
 end
+
+-- TODO: align this with prvious way of defining keymaps
+K.copilot_chat_keys = {
+    { "<leader>cc", ":CopilotChatToggle<CR>", mode = "n", desc = "Toggle CopilotChat main window" },
+    {
+        "<leader>cq",
+        function()
+            local input = vim.fn.input("Quick Chat: ")
+            if input ~= "" then
+                require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+            end
+        end,
+        mode = "n",
+        desc = "CopilotChat - Quick chat",
+    },
+}
 
 return K

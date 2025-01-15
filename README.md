@@ -10,7 +10,7 @@ My neovim configuration that I use to develop Python and C/C++ projects.
 
 # List of dependencies:
 - npm 8.0+
-- nodejs 17.0+
+- nodejs 18.0+
 - python3
 - pip
 - ripgrep (needed for telescope grepping)
@@ -22,6 +22,9 @@ My neovim configuration that I use to develop Python and C/C++ projects.
 # Tips
 - if you want to replace vim with nvim add this to your .bashrc:
     `alias vim=nvim`
+- use `:checkhealth` to see if everything is working correctly
+- all my keybindings are in `lua/vim-keymap.lua`
+- all global options are in `lua/vim-options.lua`
 
 # List of plugins
 - Appearance:
@@ -33,6 +36,7 @@ My neovim configuration that I use to develop Python and C/C++ projects.
     - plugin manager:         https://github.com/folke/lazy.nvim
     - tree-like file browser: https://github.com/nvim-neo-tree/neo-tree.nvim
     - fuzzy finder:           https://github.com/nvim-telescope/telescope.nvim
+    - CopilotChat:            https://github.com/CopilotC-Nvim/CopilotChat.nvim
 - LSP:
     - LSPs/formatters/linters package manager:            https://github.com/williamboman/mason.nvim
     - bridge for Mason and lspconfig:                     https://github.com/williamboman/mason-lspconfig.nvim

@@ -27,3 +27,5 @@ vim.opt.scrolloff = 8
 -- column at the right
 vim.opt.colorcolumn = "120"
 
+-- always split to the right
+vim.opt.splitright = true
