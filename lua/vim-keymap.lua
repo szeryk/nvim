@@ -49,6 +49,10 @@ function K.setGeneralKeymap()
     vim.keymap.set("n", "<leader>tp", ":tabp<CR>", { desc = "[T]ab [P]revious}" })
     vim.keymap.set("n", "<leader>tx", ":tab close<CR>", { desc = "[T]ab [C]lose}" })
 
+    -- buffers managments
+    vim.keymap.set("n", "<leader>bn", ":bn<CR>", { desc = "[B]uffer [N]ext}" })
+    vim.keymap.set("n", "<leader>bp", ":bp<CR>", { desc = "[B]uffer [P]revious}" })
+
     -- super fast macro
     vim.keymap.set("n", "<leader><Space>", "@q")
 end
@@ -62,14 +66,15 @@ function K.setTelescopeKeymap()
     vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles}" })
     vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
     vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
+    vim.keymap.set("n", "<leader>sb", ":Telescope buffers<CR>", { desc = "[S]earch in [B]uffers" })
 
     local themes = require("telescope.themes")
-    vim.keymap.set("n", "<leader>sb", function()
+    vim.keymap.set("n", "<leader>sh", function()
         builtin.current_buffer_fuzzy_find(themes.get_dropdown({
             winblend = 10,
             previewer = false,
         }))
-    end, { desc = "[/] Fuzzily search in current buffer" })
+    end, { desc = "[S]earch [H]ere (in current buffer)" })
 end
 
 function K.setLspKeymap()
