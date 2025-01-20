@@ -11,7 +11,7 @@ return {
             require("mason").setup()
             require("mason-lspconfig").setup({
                 -- watchout! pyright needs npm to be available in the system
-                ensure_installed = { "lua_ls", "pyright", "clangd", "marksman" } -- marksman is a markdown LSP
+                ensure_installed = { "lua_ls", "pyright", "clangd", "marksman" }
             })
         end
     },
@@ -36,6 +36,10 @@ return {
             })
 
             lspconfig.clangd.setup({
+                capabilities = capabilities
+            })
+
+            lspconfig.marksman.setup({
                 capabilities = capabilities
             })
 
