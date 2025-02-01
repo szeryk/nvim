@@ -15,6 +15,7 @@ My neovim configuration that I use to develop Python and C/C++ projects.
 - pip
 - ripgrep (needed for telescope grepping)
 - Nerd Fonts
+- lazygit
 
 # Quirks
 - C++ LSP used is `clangd` which relies heavily on `compile_commands.json`. Learn about it.
@@ -23,6 +24,8 @@ My neovim configuration that I use to develop Python and C/C++ projects.
 - if you want to replace vim with nvim add this to your .bashrc:
     `alias vim=nvim`
 - use `:checkhealth` to see if everything is working correctly
+    - `:checkhealth Mason` to see if Mason is working correctly
+    - `:checkhealth snacks` to see if snacks are working correctly
 - all my keybindings are in `lua/vim-keymap.lua`
 - all global options are in `lua/vim-options.lua`
 
@@ -49,4 +52,5 @@ My neovim configuration that I use to develop Python and C/C++ projects.
     - LuaSnip completion source for nvim-cmp:  https://github.com/saadparwaiz1/cmp_luasnip
     - collection of snippets:                  https://github.com/rafamadriz/friendly-snippets
     - copilot:                                 https://github.com/github/copilot.vim
-
+- Plugin collections:
+    - snacks.nvim:                             https://github.com/folke/snacks.nvim

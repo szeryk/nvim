@@ -27,5 +27,8 @@ vim.opt.scrolloff = 8
 -- column at the right
 vim.opt.colorcolumn = "120"
 
+-- disable default statuscolumn
+vim.o.statuscolumn = ""
+
 -- always split to the right
 vim.opt.splitright = true
