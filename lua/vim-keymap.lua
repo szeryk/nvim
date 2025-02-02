@@ -57,10 +57,6 @@ function K.setGeneralKeymap()
     vim.keymap.set("n", "<leader><Space>", "@q")
 end
 
-function K.setNeotreeKeymap()
-    vim.keymap.set("n", "<leader>tt", ":Neotree toggle<CR>")
-end
-
 function K.setLspKeymap()
     vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -135,6 +131,7 @@ K.snacks_keys = {
     -- { "<c-_>",      function() Snacks.terminal() end, desc = "which_key_ignore" },
     { "]]",         function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
     { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
+    { "<leader>tt", function() Snacks.explorer() end, desc = "[T]oggle [T]ree" },
     {
       "<leader>N",
       desc = "Neovim News",

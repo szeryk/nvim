@@ -19,19 +19,3 @@ vim.opt.rtp:prepend(lazypath)
 
 -- setup lazy
 require("lazy").setup("plugins") -- uses all plugins modules from lua/plugins/*
-
--- work around for neotree - it cannot be correctly setup by lazy.vim
--- for some reason opts = {} are not passed / are not working with
--- lazy.vim's default setup(opts) call
-require("neo-tree").setup({
-	filesystem = {
-		follow_current_file = { enabled = true },
-		hijack_netrw_behavior = "disabled",
-        filtered_items = {
-            hide_gitignored = false,
-            hide_dotfiles = false
-        },
-	},
-	close_if_last_window = true,
-})
-

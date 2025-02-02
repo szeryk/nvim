@@ -15,7 +15,8 @@ My neovim configuration that I use to develop Python and C/C++ projects.
 - pip
 - ripgrep
 - Nerd Fonts
-- lazygit
+- lazygit - for Snacks git
+- fd-find - for Snacks explorer
 
 # Quirks
 - C++ LSP used is `clangd` which relies heavily on `compile_commands.json`. Learn about it.
@@ -37,7 +38,6 @@ My neovim configuration that I use to develop Python and C/C++ projects.
     - tmux navigation:   https://github.com/christoomey/vim-tmux-navigator
 - Utilities:
     - plugin manager:         https://github.com/folke/lazy.nvim
-    - tree-like file browser: https://github.com/nvim-neo-tree/neo-tree.nvim
     - CopilotChat:            https://github.com/CopilotC-Nvim/CopilotChat.nvim
 - LSP:
     - LSPs/formatters/linters package manager:            https://github.com/williamboman/mason.nvim

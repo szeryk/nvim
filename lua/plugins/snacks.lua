@@ -17,11 +17,15 @@ return {
       enabled = true,
       timeout = 3000,
     },
-    picker = { enabled = true },        -- TODO: configure picker and explorer (instead of Telescope and neo-tree)
+    picker = { enabled = true },
     quickfile = { enabled = true },     -- load nvim cli argument file as quickly as possible (delay plugins)
     scroll = { enabled = false },       -- smooth scrolling
     statuscolumn = { enabled = false }, -- status column with git signs
     words = { enabled = true },         -- auto show LSP references
+    explorer = {
+        enabled = true,
+        replace_netrw = false, -- a little buggy when enabled
+    },
     styles = {
       notification = {
         -- wo = { wrap = true } -- Wrap notifications
