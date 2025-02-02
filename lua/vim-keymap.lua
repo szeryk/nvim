@@ -63,10 +63,10 @@ end
 
 function K.setTelescopeKeymap()
     local builtin = require("telescope.builtin")
-    vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles}" })
-    vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
-    vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-    vim.keymap.set("n", "<leader>sb", ":Telescope buffers<CR>", { desc = "[S]earch in [B]uffers" })
+    -- vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles}" })
+    -- vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+    -- vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
+    --vim.keymap.set("n", "<leader>sb", ":Telescope buffers<CR>", { desc = "[S]earch in [B]uffers" })
 
     local themes = require("telescope.themes")
     vim.keymap.set("n", "<leader>sh", function()
@@ -126,22 +126,30 @@ K.copilot_chat_keys = {
 
 -- TODO: fix undefined global variable
 K.snacks_keys = {
-    { "<leader>pf", function() Snacks.picker.files() end, desc = "Find Files" },
+    -- picker keymaps
+    { "<leader>sb", function() Snacks.picker.buffers() end, desc = "[S]earch [B]uffers" },
+    { "<leader>sg", function() Snacks.picker.grep() end, desc = "[S]earch by [G]rep" },
+    { "<leader>sf", function() Snacks.picker.files() end, desc = "[S]earch [F]iles" },
+    { "<leader>sh", function() Snacks.picker.lines() end, desc = "[S]earch [H]ere" }, -- kinad buggy?
+    { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "[S]earch [W]ord", mode = { "n", "x" } },
+    { "<leader>sg", function() Snacks.picker.git_log() end, desc = "[S]earch [G]it" },
+
+    -- other keymaps
     { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
-    { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
-    { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
-    { "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
-    { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
-    { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
-    { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
-    { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
+    -- { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
+    -- { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+    -- { "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
+    -- { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
+    -- { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
+    -- { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
+    -- { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
     { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
     { "<leader>gf", function() Snacks.lazygit.log_file() end, desc = "Lazygit Current File History" },
     { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
     { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit Log (cwd)" },
     { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
-    { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
-    { "<c-_>",      function() Snacks.terminal() end, desc = "which_key_ignore" },
+    -- { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
+    -- { "<c-_>",      function() Snacks.terminal() end, desc = "which_key_ignore" },
     { "]]",         function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
     { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
     {
@@ -166,16 +174,16 @@ K.snacks_keys = {
 
 K.snacks_toggles = function ()
     Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
-    Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
+    -- Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
     Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
     Snacks.toggle.diagnostics():map("<leader>ud")
     Snacks.toggle.line_number():map("<leader>ul")
-    Snacks.toggle.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map("<leader>uc")
-    Snacks.toggle.treesitter():map("<leader>uT")
-    Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("<leader>ub")
-    Snacks.toggle.inlay_hints():map("<leader>uh")
+    -- Snacks.toggle.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map("<leader>uc")
+    -- Snacks.toggle.treesitter():map("<leader>uT")
+    -- Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("<leader>ub")
+    -- Snacks.toggle.inlay_hints():map("<leader>uh")
     Snacks.toggle.indent():map("<leader>ug")
-    Snacks.toggle.dim():map("<leader>uD")
+    -- Snacks.toggle.dim():map("<leader>uD")
 end
 
 return K
