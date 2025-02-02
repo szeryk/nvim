@@ -116,7 +116,6 @@ K.snacks_keys = {
     { "<leader>sf", function() Snacks.picker.files() end, desc = "[S]earch [F]iles" },
     { "<leader>sh", function() Snacks.picker.lines() end, desc = "[S]earch [H]ere" }, -- kinad buggy?
     { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "[S]earch [W]ord", mode = { "n", "x" } },
-    { "<leader>sg", function() Snacks.picker.git_log() end, desc = "[S]earch [G]it" },
 
     -- other keymaps
     { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
