@@ -13,7 +13,7 @@ My neovim configuration that I use to develop Python and C/C++ projects.
 - nodejs 18.0+
 - python3
 - pip
-- ripgrep (needed for telescope grepping)
+- ripgrep
 - Nerd Fonts
 - lazygit
 
@@ -38,7 +38,6 @@ My neovim configuration that I use to develop Python and C/C++ projects.
 - Utilities:
     - plugin manager:         https://github.com/folke/lazy.nvim
     - tree-like file browser: https://github.com/nvim-neo-tree/neo-tree.nvim
-    - fuzzy finder:           https://github.com/nvim-telescope/telescope.nvim
     - CopilotChat:            https://github.com/CopilotC-Nvim/CopilotChat.nvim
 - LSP:
     - LSPs/formatters/linters package manager:            https://github.com/williamboman/mason.nvim
