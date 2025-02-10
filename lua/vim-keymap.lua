@@ -107,11 +107,11 @@ K.copilot_chat_keys = {
 -- TODO: fix undefined global variable
 K.snacks_keys = {
     -- picker keymaps
-    { "<leader>sb", function() Snacks.picker.buffers() end, desc = "[S]earch [B]uffers" },
-    { "<leader>sg", function() Snacks.picker.grep() end, desc = "[S]earch by [G]rep" },
-    { "<leader>sf", function() Snacks.picker.files() end, desc = "[S]earch [F]iles" },
-    { "<leader>sh", function() Snacks.picker.lines() end, desc = "[S]earch [H]ere" }, -- kinad buggy?
-    { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "[S]earch [W]ord", mode = { "n", "x" } },
+    { "<leader>fb", function() Snacks.picker.buffers() end, desc = "[F]ind [B]uffers" },
+    { "<leader>fg", function() Snacks.picker.grep() end, desc = "[F]ind by [G]repping" },
+    { "<leader>ff", function() Snacks.picker.files() end, desc = "[F]ind [F]iles" },
+    { "<leader>fh", function() Snacks.picker.lines() end, desc = "[F]ind [H]ere" }, -- kinad buggy?
+    { "<leader>fw", function() Snacks.picker.grep_word() end, desc = "[F]ind [W]ord", mode = { "n", "x" } },
 
     -- other keymaps
     { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
