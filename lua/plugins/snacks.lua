@@ -26,11 +26,6 @@ return {
         enabled = true,
         replace_netrw = false, -- a little buggy when enabled
     },
-    styles = {
-      notification = {
-        -- wo = { wrap = true } -- Wrap notifications
-      }
-    }
   },
   keys = vimKeymap.snacks_keys,
   init = function()
