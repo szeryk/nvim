@@ -7,6 +7,7 @@ vim.cmd("set smartindent")
 
 -- line number
 vim.opt.nu = true
+vim.opt.relativenumber = true
 
 -- no wrapping
 vim.opt.wrap = false
