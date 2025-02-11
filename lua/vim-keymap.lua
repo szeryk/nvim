@@ -71,7 +71,7 @@ function K.setLspKeymap()
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
             vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
             vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-            vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+            -- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts) -- conflicts with tmux movements
             vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
             vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
             vim.keymap.set("n", "<leader>wl", function()
