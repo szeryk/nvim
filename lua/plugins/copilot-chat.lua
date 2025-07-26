@@ -127,12 +127,12 @@ return {
                     insert = "<C-c>",
                 },
                 reset = {
-                    normal = "<C-l>",
-                    insert = "<C-l>",
+                    -- normal = "<C-l>",
+                    -- insert = "<C-l>",
                 },
                 submit_prompt = {
                     normal = "<CR>",
-                    insert = "<C-s>",
+                    -- insert = "<C-s>",
                 },
                 toggle_sticky = {
                     detail = "Makes line under cursor sticky or deletes sticky line.",
