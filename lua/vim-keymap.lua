@@ -112,6 +112,7 @@ K.snacks_keys = {
     { "<leader>ff", function() Snacks.picker.files() end, desc = "[F]ind [F]iles" },
     { "<leader>fh", function() Snacks.picker.lines() end, desc = "[F]ind [H]ere" }, -- kinad buggy?
     { "<leader>fw", function() Snacks.picker.grep_word() end, desc = "[F]ind [W]ord", mode = { "n", "x" } },
+    { "<leader>fu", function() Snacks.picker.undo() end, desc = "Undo History" },
 
     -- other keymaps
     { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
