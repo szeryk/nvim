@@ -33,3 +33,5 @@ vim.o.statuscolumn = ""
 
 -- always split to the right
 vim.opt.splitright = true
+
+vim.g.clipboard = 'osc52'
