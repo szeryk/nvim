@@ -39,6 +39,7 @@ My neovim configuration that I use to develop Python and C/C++ projects.
 - Utilities:
     - plugin manager:         https://github.com/folke/lazy.nvim
     - CopilotChat:            https://github.com/CopilotC-Nvim/CopilotChat.nvim
+    - eyeliner:               https://github.com/jinh0/eyeliner.nvim
 - LSP:
     - LSPs/formatters/linters package manager:            https://github.com/williamboman/mason.nvim
     - bridge for Mason and lspconfig:                     https://github.com/williamboman/mason-lspconfig.nvim
