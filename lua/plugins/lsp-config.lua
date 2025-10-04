@@ -34,6 +34,7 @@ return {
                 "pyright",
                 "clangd",
                 "marksman",
+                "copilot",
             })
 
             local vimKeymap = require("..vim-keymap")
