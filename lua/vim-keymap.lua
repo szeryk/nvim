@@ -107,53 +107,53 @@ K.copilot_chat_keys = {
 -- TODO: fix undefined global variable
 K.snacks_keys = {
     -- picker keymaps
-    { "<leader>fb", function() Snacks.picker.buffers() end, desc = "[F]ind [B]uffers" },
-    { "<leader>fg", function() Snacks.picker.grep() end, desc = "[F]ind by [G]repping" },
-    { "<leader>ff", function() Snacks.picker.files() end, desc = "[F]ind [F]iles" },
-    { "<leader>fh", function() Snacks.picker.lines() end, desc = "[F]ind [H]ere" }, -- kinad buggy?
-    { "<leader>fw", function() Snacks.picker.grep_word() end, desc = "[F]ind [W]ord", mode = { "n", "x" } },
-    { "<leader>fu", function() Snacks.picker.undo() end, desc = "Undo History" },
+    { "<leader>fb", function() Snacks.picker.buffers() end,          desc = "[F]ind [B]uffers" },
+    { "<leader>fg", function() Snacks.picker.grep() end,             desc = "[F]ind by [G]repping" },
+    { "<leader>ff", function() Snacks.picker.files() end,            desc = "[F]ind [F]iles" },
+    { "<leader>fh", function() Snacks.picker.lines() end,            desc = "[F]ind [H]ere" }, -- kinad buggy?
+    { "<leader>fw", function() Snacks.picker.grep_word() end,        desc = "[F]ind [W]ord",               mode = { "n", "x" } },
+    { "<leader>fu", function() Snacks.picker.undo() end,             desc = "Undo History" },
 
     -- other keymaps
-    { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
-    { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
+    { "<leader>z",  function() Snacks.zen() end,                     desc = "Toggle Zen Mode" },
+    { "<leader>Z",  function() Snacks.zen.zoom() end,                desc = "Toggle Zoom" },
     -- { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
     -- { "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
     -- { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
     -- { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
     -- { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
     -- { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
-    { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
-    { "<leader>gf", function() Snacks.lazygit.log_file() end, desc = "Lazygit Current File History" },
-    { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
-    { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit Log (cwd)" },
-    { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
-    { "<leader>te", function() Snacks.terminal() end, desc = "Toggle Terminal" },
+    { "<leader>gb", function() Snacks.git.blame_line() end,          desc = "Git Blame Line" },
+    { "<leader>gf", function() Snacks.lazygit.log_file() end,        desc = "Lazygit Current File History" },
+    { "<leader>gg", function() Snacks.lazygit() end,                 desc = "Lazygit" },
+    { "<leader>gl", function() Snacks.lazygit.log() end,             desc = "Lazygit Log (cwd)" },
+    { "<leader>un", function() Snacks.notifier.hide() end,           desc = "Dismiss All Notifications" },
+    { "<leader>te", function() Snacks.terminal() end,                desc = "Toggle Terminal" },
     -- { "<c-_>",      function() Snacks.terminal() end, desc = "which_key_ignore" },
-    { "]]",         function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
-    { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
-    { "<leader>tt", function() Snacks.explorer() end, desc = "[T]oggle [T]ree" },
+    { "]]",         function() Snacks.words.jump(vim.v.count1) end,  desc = "Next Reference",              mode = { "n", "t" } },
+    { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference",              mode = { "n", "t" } },
+    { "<leader>tt", function() Snacks.explorer() end,                desc = "[T]oggle [T]ree" },
     {
-      "<leader>N",
-      desc = "Neovim News",
-      function()
-        Snacks.win({
-          file = vim.api.nvim_get_runtime_file("doc/news.txt", false)[1],
-          width = 0.6,
-          height = 0.6,
-          wo = {
-            spell = false,
-            wrap = false,
-            signcolumn = "yes",
-            statuscolumn = " ",
-            conceallevel = 3,
-          },
-        })
-      end,
+        "<leader>N",
+        desc = "Neovim News",
+        function()
+            Snacks.win({
+                file = vim.api.nvim_get_runtime_file("doc/news.txt", false)[1],
+                width = 0.6,
+                height = 0.6,
+                wo = {
+                    spell = false,
+                    wrap = false,
+                    signcolumn = "yes",
+                    statuscolumn = " ",
+                    conceallevel = 3,
+                },
+            })
+        end,
     }
 }
 
-K.snacks_toggles = function ()
+K.snacks_toggles = function()
     Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
     -- Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
     Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
@@ -165,6 +165,29 @@ K.snacks_toggles = function ()
     -- Snacks.toggle.inlay_hints():map("<leader>uh")
     Snacks.toggle.indent():map("<leader>ug")
     -- Snacks.toggle.dim():map("<leader>uD")
+end
+
+K.get_oil_keymaps = function()
+    vim.keymap.set("n", "<leader>o", ":Oil<CR>", { desc = "[O]il buffer}" })
+    return
+    {
+        ["g?"] = { "actions.show_help", mode = "n" },
+        ["<CR>"] = "actions.select",
+        ["<C-s>"] = { "actions.select", opts = { vertical = true } },
+        ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
+        ["<C-t>"] = { "actions.select", opts = { tab = true } },
+        ["<C-p>"] = "actions.preview",
+        ["<C-c>"] = { "actions.close", mode = "n" },
+        ["<C-l>"] = "actions.refresh",
+        ["<BS>"] = { "actions.parent", mode = "n" },
+        ["_"] = { "actions.open_cwd", mode = "n" },
+        ["`"] = { "actions.cd", mode = "n" },
+        ["~"] = { "actions.cd", opts = { scope = "tab" }, mode = "n" },
+        ["gs"] = { "actions.change_sort", mode = "n" },
+        ["gx"] = "actions.open_external",
+        ["g."] = { "actions.toggle_hidden", mode = "n" },
+        ["g\\"] = { "actions.toggle_trash", mode = "n" },
+    }
 end
 
 return K
