@@ -9,8 +9,8 @@ My neovim configuration that I use to develop Python and C/C++ projects.
 5. Enjoy :)
 
 # List of dependencies:
-- npm 8.0+
-- nodejs 18.0+
+- npm 9.0+
+- nodejs 22.0+
 - python3
 - pip
 - ripgrep
