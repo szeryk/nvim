@@ -173,12 +173,14 @@ K.get_oil_keymaps = function()
     {
         ["g?"] = { "actions.show_help", mode = "n" },
         ["<CR>"] = "actions.select",
-        ["<C-s>"] = { "actions.select", opts = { vertical = true } },
-        ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
+        -- <C-h> conflicts with tmux navigation - disable both split openings
+        -- ["<C-s>"] = { "actions.select", opts = { vertical = true } },
+        -- ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
         ["<C-t>"] = { "actions.select", opts = { tab = true } },
         ["<C-p>"] = "actions.preview",
         ["<C-c>"] = { "actions.close", mode = "n" },
-        ["<C-l>"] = "actions.refresh",
+        -- <C-l> conflicts with tmux navigation - disable refresh
+        -- ["<C-l>"] = "actions.refresh",
         ["<BS>"] = { "actions.parent", mode = "n" },
         ["_"] = { "actions.open_cwd", mode = "n" },
         ["`"] = { "actions.cd", mode = "n" },
