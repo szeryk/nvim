@@ -35,3 +35,6 @@ vim.o.statuscolumn = ""
 vim.opt.splitright = true
 
 vim.g.clipboard = 'osc52'
+
+-- enable virtual text for diagnostics
+vim.diagnostic.config({ virtual_text = true })
