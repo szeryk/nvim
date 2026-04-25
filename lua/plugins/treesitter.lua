@@ -2,8 +2,9 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
-        local configs = require("nvim-treesitter.configs")
+        local configs = require("nvim-treesitter.config")
         configs.setup({
+            auto_install = true,
             ensure_installed = {"lua", "python", "c", "cpp", "xml", "markdown"},
             highlight = {
                 enable = true,
